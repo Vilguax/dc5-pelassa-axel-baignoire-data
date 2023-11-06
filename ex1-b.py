@@ -1,9 +1,19 @@
 phrase = input("Saisissez une phrase : ")
 nb_mots = 0
+
+precedent_alphanum = False
 for lettre in phrase:
-    if lettre == " ":
-        nb_mots += 1
-nb_mots += 1
+    if ('a' <= lettre <= 'z') or ('A' <= lettre <= 'Z') or ('0' <= lettre <= '9'):
+        if not precedent_alphanum:
+            nb_mots += 1
+        precedent_alphanum = True
+    else:
+        if lettre == " ":
+            precedent_alphanum = False
+        else:
+            if not precedent_alphanum:
+                nb_mots += 1 
+            precedent_alphanum = False
 
 phrase_maj = ""
 for lettre in phrase:
