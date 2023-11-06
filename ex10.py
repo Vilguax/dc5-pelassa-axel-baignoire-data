@@ -1,6 +1,6 @@
 clicks = [120, 150, 130, 200, 250, 300, 100, 90, 110, "mille", 120,54]
 
-def calculate_mean(values):
+def calculate_moy(values):
     total_sum = 0
     count = 0
     for value in values:
@@ -25,8 +25,8 @@ def calculate_median(values):
     else:
         return sorted_values[mid]
 
-def calculate_stddev(values):
-    mean_val = calculate_mean(values)
+def calculate_ecarttype(values):
+    mean_val = calculate_moy(values)
     total_sum_of_squares = 0
     count = 0
     for value in values:
@@ -38,10 +38,10 @@ def calculate_stddev(values):
     variance = total_sum_of_squares / count if count != 0 else 0
     return variance ** 0.5
 
-mean_clicks = calculate_mean(clicks)
+moy_clicks = calculate_moy(clicks)
 median_clicks = calculate_median(clicks)
-stddev_clicks = calculate_stddev(clicks)
+ecarttype_clicks = calculate_ecarttype(clicks)
 
-print(f"Moyenne des clics : {mean_clicks}")
+print(f"Moyenne des clics : {moy_clicks}")
 print(f"Médiane des clics : {median_clicks}")
-print(f"Écart-type des clics : {stddev_clicks}")
+print(f"Écart-type des clics : {ecarttype_clicks}")
