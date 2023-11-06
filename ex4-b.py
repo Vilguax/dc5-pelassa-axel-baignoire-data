@@ -1,8 +1,15 @@
 def factoriel(n):
-    if n == 0:
-        return 1
+    facto = 1
+    i = 1
+
+    if n < 0:
+        print("La factorielle n'est pas définie pour les nombres négatifs.")
     else:
-        return n * factoriel(n-1)
+        while i <= n:
+            facto *= i
+            i += 1
+        return facto
+
 
 print(factoriel(5))
 print(factoriel(10))
